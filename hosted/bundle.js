@@ -255,7 +255,7 @@ var EntryList = function EntryList(props) {
           name: "_csrf",
           value: props.csrf
         }), /*#__PURE__*/React.createElement("button", {
-          "class": "todoOption",
+          "class": "view",
           id: "editButton",
           value: entry._id,
           onClick: loadEntryView

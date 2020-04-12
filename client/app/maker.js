@@ -207,7 +207,7 @@ const EntryList = function(props) {
                     <h3 className="entryNameV">Title: {entry.name} </h3>
                     <h3 className="entryDateV"> {entry.date} </h3>
                     <input type="hidden" name="_csrf" value={props.csrf} />
-                    <button class="todoOption" id="editButton" value={entry._id} onClick={loadEntryView} >View</button>
+                    <button class="view" id="editButton" value={entry._id} onClick={loadEntryView} >View</button>
                    
                 </div>
             );
