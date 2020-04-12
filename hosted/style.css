@@ -20,6 +20,7 @@ nav {
     background-color: #55acee;
 }
 
+
 nav:nth-child(1) {
     padding-left: 25px;
 }
@@ -47,7 +48,7 @@ nav:nth-child(1) {
     background-color: #66bdff;
 }
 
-.domoForm {
+.entryForm {
     border: 2px solid #338acc;
     height: 35px;
     width: 700px;
@@ -189,12 +190,14 @@ nav:nth-child(1) {
     transform: rotate(330deg);
 }
 
-#domos {
+#entries {
+    float: right;
     width: 40%;
     min-width: 400px;
     border: 2px solid #55acee;
     border-radius: 4px;
     margin: 0 auto;
+    margin-right: 1em;
     margin-top: 100px;
 }
 
@@ -259,4 +262,72 @@ h3.domoAge {
 
 .domo:last-child {
     margin-bottom:10px;
+}
+
+#editor{
+    width:60%;
+    height: 500px;
+}
+
+#viewButton{
+    padding: 5px;
+    padding-top: 12px;
+    padding-left: 20px;
+    color: white;
+    font-size: 1.3em;
+    float: left;
+}
+
+#viewButton:hover {
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+}
+
+.entryV {
+    width: 200px;
+    margin: 10px ;
+    border: 2px solid #55acee;
+    border-radius: 4px;
+    background-color: #55acee;
+    padding: 10px;
+    min-height:60px;
+    overflow: hidden;
+}
+
+.entryListV {
+    margin-left: 1em;
+    display: grid;  
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  
+    grid-template-rows: 200px 200px;
+
+}
+
+.entryV:hover {
+    transition: border-color 0.2s ease-out;
+    border-color: rgba(14, 10, 10, 0.8);
+    transition: background-color 2.6s ease-out;
+    background-color: #66bfff;
+}
+
+img.entryIcon {
+    height: 50px;
+    width: 50px;
+    border-radius: 4px;
+    margin-top:10px;
+    float:left;
+}
+
+
+h3.entryNameV {
+    text-align: center;
+    width: 200px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+h3.entryDateV {
+    width: 100px;
+    font-weight: bold;
+    padding-right: 40px;
+    font-size: 1.5em;
 }
