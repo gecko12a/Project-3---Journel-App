@@ -1,6 +1,6 @@
 const models = require('../models');
 
-const Entry = models.Entry;
+const { Entry } = models;
 
 const makeEntry = (req, res) => {
   if (!req.body.name || !req.body.content) {
@@ -44,7 +44,7 @@ const makerPage = (req, res) => {
   });
 };
 
-//gets entry and deletes it
+// gets entry and deletes it
 const deleteEntry = (request, response) => {
   const req = request;
   const res = response;
@@ -62,13 +62,13 @@ const deleteEntry = (request, response) => {
   });
 };
 
-//gets entry and makes it editeble
+// gets entry and makes it editeble
 const updateEntry = (request, response) => {
   const req = request;
   const res = response;
 
   return Entry.EntryModel.updateOne({ _id: req.body._id },
-    { name: req.body.name, content: req.body.content, date: req.body.date, },
+    { name: req.body.name, content: req.body.content, date: req.body.date },
     (err, entry) => {
       if (err) return res.status(500).send(err);
 
