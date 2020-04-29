@@ -1,10 +1,10 @@
 const handleLogin = (e) => {
     e.preventDefault();
 
-    $("#domoMessage").animate({width:'hide'},350);
+    $("#message").animate({width:'hide'},350);
 
     if($("#user").val() == '' || $("#pass").val() == '') {
-        handleError ("Rawr! Username or password is empty");
+        handleError ("Username or password is empty");
         return false;
     }
 
@@ -18,15 +18,15 @@ const handleLogin = (e) => {
 const handleSignup = (e) => {
     e.preventDefault();
 
-    $("#domoMessage").animate({width:'hide'},350);
+    $("#message").animate({width:'hide'},350);
 
     if($("#user").val() == '' || $("#pass").val() == '' || $("pass2").val() == '') {
-        handleError ("Rawr! All feilds required");
+        handleError ("All feilds required");
         return false;
     }
 
     if($("#pass").val() !== $("#pass2").val()) {
-        handleError ("Rawr! Passwords do not match");
+        handleError ("Passwords do not match");
         return false;
     }
 

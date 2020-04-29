@@ -4,11 +4,14 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color: #c6c6c6;
+    background-image: url('/assets/img/back.png');;
 }
 
 #logo {
-    height: 40px;
-    width: 40;
+    height: 70px;
+    width: 70px;
     padding-top: 5px;
     float:left;
     border-radius: 8px;
@@ -16,8 +19,9 @@ html, body {
 
 nav {
     width: 100%;
-    height: 50px;
-    background-color: #55acee;
+    height: 5em;
+    background-image: linear-gradient(to right, #478fc6 , #336a93);
+    border-bottom: .5em solid #36688e;
 }
 
 
@@ -25,71 +29,18 @@ nav:nth-child(1) {
     padding-left: 25px;
 }
 
-.navlink {
-    padding: 5px;
-    padding-top: 12px;
-    padding-left: 20px;
-    color: white;
-    font-size: 1.3em;
-    float: left;
-}
 
-.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
-    color: white;
-    text-decoration: none;
-    padding: 5px;
-    border-radius: 4px;
-    background-color: #55acee;
-    transition: background-color 0.4s ease;
-}
-
-.navlink a:hover {
-    transition: background-color 0.8s ease;
-    background-color: #66bdff;
-}
 
 .entryForm {
-    border: 2px solid #338acc;
-    height: 35px;
-    width: 700px;
+    width: 100%;
     margin-top:0px;
     padding-top:10px;
-    background-color: #55acee;
+    margin-bottom: 0;
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
 }
 
-.domoForm label {
-    display: inline-block;
-    width: 75px;
-    margin-left: 10px;
-    font-size: 1.2em;
-    float: left;
-    color: white;
-}
 
-.domoForm input[type=text] {
-    float:left;
-}
-
-.makeDomoSubmit {
-    transition: background-color 0.4s ease;
-    display: inline;
-    width: 90px;
-    background-color: #55acee;
-    border-radius: 2px;
-    color: white;
-    text-decoration: none;
-}
-
-.makeDomoSubmit:link, .makeDomoSubmit:visited, .makeDomoSubmit:hover, .makeDomoSubmit:active {
-    color: white;
-}
-
-.makeDomoSubmit:hover {
-    transition: background-color 0.4s ease;
-    background-color: #338acc;
-}
 
 .mainForm {
     height: 300px;
@@ -148,7 +99,7 @@ nav:nth-child(1) {
     box-shadow: 0px 0px 1px 1px #55acee;
 }
 
-#domoMessage {
+#message {
     display:none;
     top: 250px;
     width: 250px;
@@ -159,7 +110,7 @@ nav:nth-child(1) {
     overflow: hidden;
 }
 
-#domoMessage h3 {
+#message h3 {
     width: 200px;
     position: absolute;
     top: 0px;
@@ -179,7 +130,7 @@ nav:nth-child(1) {
     font-style: italic;
 }
 
-#domo {
+#robo {
     z-index: 225;
     margin-top: -20px;
     margin-left: 135px;
@@ -190,108 +141,16 @@ nav:nth-child(1) {
     transform: rotate(330deg);
 }
 
-#entries {
-    float: right;
-    width: 40%;
-    min-width: 400px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-right: 1em;
-    margin-top: 100px;
-}
-
-.domo {
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    background-color: #55acee;
-    padding: 10px;
-    min-height:60px;
-    overflow: hidden;
-}
-
-.domo:hover {
-    transition: border-color 0.2s ease-out;
-    border-color: rgba(255,255,255, 0.8);
-    transition: background-color 2.6s ease-out;
-    background-color: #66bfff;
-}
-
-img.domoFace {
-    margin-left: 25px;
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
-    border-radius: 4px;
-    margin-top:10px;
-    float:left;
-}
-
-h3.emptyDomo {
-    width: 400px;
-    font-size: 1.5em;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 18px;
-}
-
-h3.domoName {
-    float:left;
-    width: 200px;
-    font-weight: bold;
-    padding-left: 65px;
-    font-size: 1.5em;
-}
-
-h3.domoAge {
-    float:right;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-right: 40px;
-    font-size: 1.5em;
-}
-
-.domo:first-child {
-    margin-top: 10px;
-}
-
-.domo:last-child {
-    margin-bottom:10px;
-}
-
-#editor{
-    width:60%;
-    height: 500px;
-}
-
-#viewButton{
-    padding: 5px;
-    padding-top: 12px;
-    padding-left: 20px;
-    color: white;
-    font-size: 1.3em;
-    float: left;
-}
-
-#viewButton:hover {
-    transition: background-color 0.8s ease;
-    background-color: #66bdff;
-}
-
 .entryV {
     width: 200px;
     margin: 10px ;
-    border: 2px solid #55acee;
+    border: 2px solid #36688e;
     border-radius: 4px;
-    background-color: #55acee;
+    background-color: #438ec6;
     padding: 10px;
     min-height:60px;
     overflow: hidden;
+    color: #292929;
 }
 
 .entryListV {
@@ -301,14 +160,6 @@ h3.domoAge {
     grid-template-rows: 200px 200px;
 
 }
-
-.entryV:hover {
-    transition: border-color 0.2s ease-out;
-    border-color: rgba(14, 10, 10, 0.8);
-    transition: background-color 2.6s ease-out;
-    background-color: #66bfff;
-}
-
 img.entryIcon {
     height: 50px;
     width: 50px;
@@ -320,14 +171,327 @@ img.entryIcon {
 
 h3.entryNameV {
     text-align: center;
-    width: 200px;
     font-weight: bold;
     font-size: 1.5em;
 }
 
-h3.entryDateV {
-    width: 100px;
+h3.entryName {
+    text-align: center;
     font-weight: bold;
-    padding-right: 40px;
     font-size: 1.5em;
+}
+
+h3.entryDate {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+h3.entryDateV {
+    text-align: center;
+    font-size: 1em;
+}
+
+#editButton {
+    height: 3em;
+
+    width: 33%;
+    margin-left: 33%;
+    margin-bottom: .25em;
+}
+
+#entryview{
+    width: 100%;
+}
+
+#entryedit{
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 0;
+}
+
+#mainContent {
+    display: flex;
+
+}
+
+#entries {
+   
+    width: 20%;
+    min-width: 400px;
+    border: .25em solid #36688e;
+    border-radius: 4px;
+    margin: 0 ;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-color: #ffffff;
+}
+
+#makeEntry{
+min-width: 400px;
+border: .25em solid #36688e;
+border-radius: 4px;
+display: flex;
+justify-content: center;
+width:65%;
+margin-left: 1%;
+margin-top:1%;
+margin-right: 0px;
+background-color: #438ec6;
+
+}
+
+#nameTitle {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+#nameLabel{
+    margin-right: .5em;
+    font-size: 2em;
+    color: #292929;
+}
+
+#editor{
+width: 100%;
+height: 48em;
+background-color: #ffffff;
+}
+
+#submitButton{
+    margin-top: .5em;
+    float: right;
+    margin-right: .5em;
+}
+
+#ad{
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 10%;
+    border: .25em solid #36688e;
+    border-radius: 4px;
+    background-color: #ffffff;
+    visibility: visible;
+}
+
+#whiteSpace{
+    background-color: #ffffff;
+    margin-top: 1em;
+}
+
+#adPic{
+margin-left: 8%;
+margin-top: 8%;
+}
+
+#viewTitle {
+margin: .5em;
+font-size: 2em;
+}
+
+#editView{
+    margin-bottom: .5em;
+    margin-left: .5em;
+    font-size: 1.5em;
+    width: 8em;
+    height: 1.5em;
+
+}
+
+#backEdit {
+    margin: .5em;
+    margin-top: 1em;
+    font-size: 1.5em;
+    width: 8em;
+    height: 1.5em;
+}
+
+#backEditV {
+    margin: .5em;
+    margin-top: .75em;
+    font-size: 1.5em;
+    width: 8em;
+    height: 1.5em;
+}
+
+#deleteView {
+    margin-left: .5em;
+    font-size: 1.5em;
+    width: 8em;
+    height: 1.5em;
+}
+
+#deleteEdit{
+    margin-left: .5em;
+    font-size: 1.5em;
+    width: 5em;
+}
+
+#viewName {
+    margin: 1%;
+    font-size: 2em;
+    color: #292929;
+}
+
+#viewDate{
+    margin: 1%;
+    font-size: 1em;
+    color: #292929;
+}
+
+#editName {
+    margin-top: 1%;
+    font-size: 2em;
+    color: #292929;
+}
+
+
+
+#editDate{
+    margin: 1%;
+    font-size: 1em;
+    color: #292929;
+}
+
+button {
+    border-radius: 8px;
+    border: none;
+    background-color:  #55acee;
+    color: white;
+}
+button:hover{
+    transition: background-color 0.8s ease;
+    background-color:  #66bdff;
+}
+
+.navlink {
+    padding: 5px;
+    padding-top: .6em;
+    padding-left: 20px;
+    color: white;
+    font-size: 2em;
+    float: left;
+}
+
+.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #55acee;
+    transition: background-color 0.4s ease;
+}
+
+.navlink a:hover {
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+}
+
+#viewButton{
+    padding: 5px;
+    margin-top: .4em;
+    margin-left: .6em;
+    font-size: 1.3em;
+    float: left;
+    font-size: 2em;
+}
+
+#viewButton:hover {
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+
+}
+
+#passB {
+    padding: 5px;
+    margin-top: .4em;
+    margin-right: .6em;
+    font-size: 1.3em;
+    float: right;
+    font-size: 2em;
+}
+#passB:hover {
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+
+}
+
+.makEntryEdit {
+    font-size: 2em;
+    float: right;
+    margin-right: .5em;
+    margin-top: .75em;
+    border-radius: 8px;
+    border: none;
+    background-color:  #55acee;
+    color: white;
+}
+.makEntryEdit:hover{
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+}
+
+.makEntrySubmit{
+    font-size: 1.5em;
+    border-radius: 8px;
+    margin-top: 1em;
+    border: none;
+    background-color:  #55acee;
+    color: white;
+}
+.makEntrySubmit:hover{
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+}
+
+.entry{
+    border: .25em solid #36688e;
+}
+
+#passForm{
+    position: absolute;
+    display: block;
+    left: 35%;
+    top: 40%;
+    width: 10em;
+    background-color: white;
+    z-index: 5;
+    border: .25em solid #36688e;
+}
+
+#passButton {
+    padding: 5px;
+    margin-top: .4em;
+    font-size: 1em;
+}
+#passButton:hover {
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+
+}
+
+#closePass{
+    padding: 5px;
+    margin-top: .4em;
+    font-size: 1em;
+}
+#closePass:hover{
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+}
+
+#oldPass{
+margin: .5em;
+
+}
+#newPass{
+    margin: .5em;
+
+}
+#newPass2{
+    margin: .5em;
+
 }

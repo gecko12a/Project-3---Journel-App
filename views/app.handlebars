@@ -8,20 +8,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script> 
+  <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+  <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
 </head>
 <body>
-  <nav ><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
+  <nav ><a href="/login"><img id="logo" src="/assets/img/pen.png" alt="pen logo"/></a>
     <div class="navlink"><a href="/logout">Log out</a></div>
     <div id="nav"></div>
   </nav>
-  <section id="makeEntry">
+<div id="passBlock"></div>
+<section id="mainContent">
+  <section id="ad">
+    <img id="adPic" src="/assets/img/Ad.png"/> 
+  </section>
+ <section id="makeEntry">
   </section>
   <section id="entries">
   </section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+</section>
+ 
+  <div id="message"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage"></span></h3><img id="robo" src="assets/img/mess.png" alt="robot"/>
   </div>
   <script src="/assets/bundle.js"></script>
 </body>

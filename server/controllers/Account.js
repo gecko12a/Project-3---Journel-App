@@ -23,7 +23,7 @@ const login = (request, response) => {
   const password = `${req.body.pass}`;
 
   if (!username || !password) {
-    return res.status(400).json({ error: 'RAWR! All fields are required' });
+    return res.status(400).json({ error: 'All fields are required' });
   }
 
   return Account.AccountModel.authenticate(username, password, (err, account) => {
@@ -36,6 +36,34 @@ const login = (request, response) => {
     return res.json({ redirect: '/maker' });
   });
 };
+//change password
+const passChange = (request, response) => {
+  const req = request;
+  const res = response;
+
+  Account.AccountModel.authenticate( req.session.account.username, req.body.oldPass, (err, doc) => {
+
+      if (err) {
+        return res.status(400).json({ err });
+      }
+
+      if (!doc) {
+        return res.status(400).json({ err: 'invalid credentials' });
+      }
+
+      Account.AccountModel.generateHash(req.body.newPass, (salt, hash) => {
+        Account.AccountModel.updateOne({ username: req.session.account.username },
+          { salt, password: hash }, (error) => {
+            if (err) {
+              return res.status(400).json({ error });
+            }
+
+            return res.json({ message: 'password changed' });
+          });
+      });
+    },
+  );
+};
 
 const signup = (request, response) => {
   const req = request;
@@ -46,11 +74,11 @@ const signup = (request, response) => {
   req.body.pass2 = `${req.body.pass2}`;
 
   if (!req.body.username || !req.body.pass || !req.body.pass2) {
-    return res.status(400).json({ error: 'RAWR! All fields are required' });
+    return res.status(400).json({ error: 'All fields are required' });
   }
 
   if (req.body.pass !== req.body.pass2) {
-    return res.status(400).json({ error: 'RAWR! Passwords do not match' });
+    return res.status(400).json({ error: 'Passwords do not match' });
   }
 
   return Account.AccountModel.generateHash(req.body.pass, (salt, hash) => {
@@ -92,9 +120,16 @@ const getToken = (request, response) => {
   res.json(csrfJSON);
 };
 
+
+const errorPage = (req, res) => {
+  res.render('error', { csrfToken: req.csrfToken() });
+};
+
 module.exports.loginPage = loginPage;
 module.exports.login = login;
 module.exports.logout = logout;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
 module.exports.getToken = getToken;
+module.exports.passChange = passChange;
+module.exports.errorPage = errorPage;

@@ -7,7 +7,7 @@ let EntryModel = {};
 
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
-const setContent = (content) => _.escape(content).trim();
+
 
 const EntrySchema = new mongoose.Schema({
   name: {
@@ -18,10 +18,7 @@ const EntrySchema = new mongoose.Schema({
   },
 
   content: {
-    type: String,
-    required: true,
-    trim: true,
-    set: setContent,
+    type: Object,
   },
 
   owner: {

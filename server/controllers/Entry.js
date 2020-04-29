@@ -67,6 +67,10 @@ const updateEntry = (request, response) => {
   const req = request;
   const res = response;
 
+  if (!req.body.name || !req.body.content) {
+    return res.status(400).json({ error: 'Both Name and Content are Required' });
+  }
+
   return Entry.EntryModel.updateOne({ _id: req.body._id },
     { name: req.body.name, content: req.body.content, date: req.body.date },
     (err, entry) => {
@@ -86,6 +90,7 @@ const getEntries = (request, response) => {
   const req = request;
   const res = response;
 
+  
   return Entry.EntryModel.findByOwner(req.session.account._id, (err, docs) => {
     if (err) {
       console.log(err);
