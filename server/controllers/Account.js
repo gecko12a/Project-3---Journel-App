@@ -36,33 +36,34 @@ const login = (request, response) => {
     return res.json({ redirect: '/maker' });
   });
 };
-//change password
+// change password
 const passChange = (request, response) => {
   const req = request;
   const res = response;
 
-  Account.AccountModel.authenticate( req.session.account.username, req.body.oldPass, (err, doc) => {
+  Account.AccountModel.authenticate(req.session.account.username, req.body.oldPass, (err, doc) => {
+    if (err) {
+      return res.status(400).json({ err });
+    }
 
-      if (err) {
-        return res.status(400).json({ err });
-      }
+    if (!doc) {
+      return res.status(400).json({ err: 'invalid credentials' });
+    }
 
-      if (!doc) {
-        return res.status(400).json({ err: 'invalid credentials' });
-      }
+    Account.AccountModel.generateHash(req.body.newPass, (salt, hash) => {
+      Account.AccountModel.updateOne({ username: req.session.account.username },
+        { salt, password: hash }, (error) => {
+          if (err) {
+            return res.status(400).json({ error });
+          }
 
-      Account.AccountModel.generateHash(req.body.newPass, (salt, hash) => {
-        Account.AccountModel.updateOne({ username: req.session.account.username },
-          { salt, password: hash }, (error) => {
-            if (err) {
-              return res.status(400).json({ error });
-            }
-
-            return res.json({ message: 'password changed' });
-          });
-      });
-    },
-  );
+          return res.json({ message: 'password changed' });
+        });
+      return res.json({ message: 'password changed' });
+    });
+    return res.json({ message: 'password changed' });
+  });
+  return res.json({ message: 'password changed' });
 };
 
 const signup = (request, response) => {

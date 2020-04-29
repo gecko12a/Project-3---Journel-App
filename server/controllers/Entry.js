@@ -90,7 +90,7 @@ const getEntries = (request, response) => {
   const req = request;
   const res = response;
 
-  
+
   return Entry.EntryModel.findByOwner(req.session.account._id, (err, docs) => {
     if (err) {
       console.log(err);
