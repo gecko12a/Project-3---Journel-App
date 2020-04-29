@@ -59,11 +59,9 @@ const passChange = (request, response) => {
 
           return res.json({ message: 'password changed' });
         });
-      return res.json({ message: 'password changed' });
     });
-    return res.json({ message: 'password changed' });
+    return 1;
   });
-  return res.json({ message: 'password changed' });
 };
 
 const signup = (request, response) => {
